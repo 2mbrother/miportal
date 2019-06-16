@@ -11,43 +11,54 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'UA-142172967-1');
 </script>
 <style>
+body { margin:0; }
 /** id는 딱 하나만 존재해야함..*/
-#id { color:gray; }
+#grid{display:grid; grid-template-columns: 190px 1fr;}
+#story{padding-left:25px}
 .already{  color:gray;}
   a {    color:black;    text-decoration: none;  }
-  h1 {font-size: 45px; text-align: center; font-weight: bold; }
+  h1 {font-size: 45px; text-align: center; font-weight: bold;
+       border-bottom:1px solid gray; margin:0; padding:30px; }
+  ol {
+    border-right: 1px solid gray;    width:120px; margin:0; padding:20px;
+    }
+#grid ol{padding-left:40px;}
+  /* border :5px solid red; padding:20px; margin:20px; display:block or inline; width:100px;*/
 </style>
 </head>
 
 <body>
   <h1><a href="index.html">Mbro.com</a></h1>
-  <ol>
-    <li class="already"><a href="1.html" class="already">html</a></li>
-    <li class="already"><a href="2.html" class="already">CSS</a></li>
-    <li class="already"><a href="3.html" class="already">Javascript</a></li>
-    <li><a href="samsung.html">Samsung web</a></li>
-  </ol>
-  <h2>Samsung관련 Page</h2>
-  <ul>
-    <li><a href="http://ds여가포인트.com" target="_blank" title="여가포인트 Link">여가포인트</a></li>
-    <li><a href="https://sec.s-bluevery.com/cuser/login/loginForm.ez?url="
-      target="_blank" title="베네포유 Link">베네포유</a></li>
-    <li><a href="https://familynet.shop.samsung.com"
-      target="_blank" title="페밀리넷 Link">페밀리넷몰(iexplore에서만 사용가능)</a></li>
-    <li><a href="http://secedu.multicampus.com/start.htm"
-      target="_blank" title="전화영어 Link">전화영어신청</a></li>
-    <li><a href="https://ksp.multicampus.com/ksp/jsp/gate/gbIntroSRV2210_ssl.jsp"
-      target="_blank" title="삼성유 Link">SamsungU</a></li>
-  </ul>
-<img src="10.jpg" width="30%">
-<p>BGM Pause : <iframe width="20" height="20"
-  src="https://www.youtube.com/embed/1-xGerv5FOk?amp;autoplay=1"
-  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</P>
+  <div id="grid">
+    <ol>
+      <li class="already"><a href="1.html" class="already">html</a></li>
+      <li class="already"><a href="2.html" class="already">CSS</a></li>
+      <li class="already"><a href="3.html" class="already">Javascript</a></li>
+      <li><a href="samsung.html">Samsung web</a></li>
+    </ol>
+    <div id="story">
+      <h2>Samsung관련 Page</h2>
+      <ul>
+        <li><a href="http://ds여가포인트.com" target="_blank" title="여가포인트 Link">여가포인트</a></li>
+        <li><a href="https://sec.s-bluevery.com/cuser/login/loginForm.ez?url="
+          target="_blank" title="베네포유 Link">베네포유</a></li>
+        <li><a href="https://familynet.shop.samsung.com"
+          target="_blank" title="페밀리넷 Link">페밀리넷몰(iexplore에서만 사용가능)</a></li>
+        <li><a href="http://secedu.multicampus.com/start.htm"
+          target="_blank" title="전화영어 Link">전화영어신청</a></li>
+        <li><a href="https://ksp.multicampus.com/ksp/jsp/gate/gbIntroSRV2210_ssl.jsp"
+          target="_blank" title="삼성유 Link">SamsungU</a></li>
+      </ul>
+      <img src="10.jpg" width="30%">
+      <p>BGM Pause : <iframe width="20" height="20"
+        src="https://www.youtube.com/embed/1-xGerv5FOk?amp;autoplay=1"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </P>
+  </div>
+</div>
 <p>
   <div id="disqus_thread"></div>
 <script>
