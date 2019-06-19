@@ -1,6 +1,6 @@
 body { margin:0; }
 /** id는 딱 하나만 존재해야함..*/
-#grid{display:grid; grid-template-columns: 190px 1fr;}
+#grid{display:grid; grid-template-columns: 200px 1fr;}
 #story{padding-left:25px}
 .already{  color:gray;}
 .link2{ COLOR:black;}
