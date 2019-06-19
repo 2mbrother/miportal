@@ -3,6 +3,7 @@ body { margin:0; }
 #grid{display:grid; grid-template-columns: 190px 1fr;}
 #story{padding-left:25px}
 .already{  color:gray;}
+.link2{ COLOR:black;}
   a {    color:black;    text-decoration: none;  }
   h1 {font-size: 45px; text-align: center; font-weight: bold;
        border-bottom:1px solid gray; margin:0; padding:30px; }
@@ -10,6 +11,14 @@ body { margin:0; }
     border-right: 1px solid gray;    width:120px; margin:0; padding:20px;
     }
 #grid ol{padding-left:40px;}
+#header
+      {
+        font-size: 100px; text-align: center; font-weight: bold;
+        padding: 160px; padding-bottom: 30px;
+      }
+#indeximage
+      {
+        display: block; margin: 0px auto;      }
 @media(max-width:500px){
   ol{border-right:none;}
   #grid {display: block;}
