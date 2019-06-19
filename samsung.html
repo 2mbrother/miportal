@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="style2.css">
 </head>
 
-<body>
+<body >
   <h1><a href="index.html">Mbro.com</a></h1>
   <div id="grid">
     <ol>
@@ -28,21 +28,62 @@
     <div id="story">
       <h2>Samsung관련 Page</h2>
       <ul>
-        <li><a href="http://ds여가포인트.com" target="_blank" title="여가포인트 Link">여가포인트</a></li>
-        <li><a href="https://sec.s-bluevery.com/cuser/login/loginForm.ez?url="
+        <li><a class="link2" href="http://ds여가포인트.com" target="_blank" title="여가포인트 Link">여가포인트</a></li>
+        <li><a class="link2" href="https://sec.s-bluevery.com/cuser/login/loginForm.ez?url="
           target="_blank" title="베네포유 Link">베네포유</a></li>
-        <li><a href="https://familynet.shop.samsung.com"
+        <li><a class="link2" href="https://familynet.shop.samsung.com"
           target="_blank" title="페밀리넷 Link">페밀리넷몰(iexplore에서만 사용가능)</a></li>
-        <li><a href="http://secedu.multicampus.com/start.htm"
+        <li><a class="link2" href="http://secedu.multicampus.com/start.htm"
           target="_blank" title="전화영어 Link">전화영어신청</a></li>
-        <li><a href="https://ksp.multicampus.com/ksp/jsp/gate/gbIntroSRV2210_ssl.jsp"
+        <li><a class="link2" href="https://ksp.multicampus.com/ksp/jsp/gate/gbIntroSRV2210_ssl.jsp"
           target="_blank" title="삼성유 Link">SamsungU</a></li>
       </ul>
       <img src="10.jpg" width="30%">
+
+      </script>
       <p>BGM Pause : <iframe width="16" height="16"
         src="https://www.youtube.com/embed/Il-an3K9pjg?autoplay=1&amp;loop=1;playlist=fn5OBAfHLKQ"
         frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </P>
+<!--button-->
+      <p>
+        <input type="button" value="night" onclick=
+        "var target = document.querySelector('body');
+        var linkcolor = document.querySelectorAll('a');
+        var alre = document.querySelectorAll('.already');
+        var i=4;        var t=0;
+        if(this.value==='night')
+          {
+            target.style.backgroundColor='black';
+            target.style.color='white';
+            this.value='day';
+            document.querySelector('h1').querySelector('a').style.color='white';
+            while(i<linkcolor.length ||t<alre.length)
+                {
+                  linkcolor[i].style.color='white';
+                  alre[t].style.color='gray';
+                  t+=1;
+                  i+=1;
+                }
+          }
+        else
+          {
+              target.style.backgroundColor='white';
+              target.style.color='black';
+              this.value='night';
+              document.querySelector('h1').style.color='black';
+              document.querySelector('h1').querySelector('a').style.color='black';
+              while(i<linkcolor.length||t<alre.length)
+                {
+                  linkcolor[i].style.color='black';
+                  i+=1;
+                  alre[t].style.color='gray';
+                  t+=1;
+                }
+          }">
+      </p>
+
+
   </div>
 </div>
 
