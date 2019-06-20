@@ -14,8 +14,81 @@
 
   gtag('config', 'UA-142172967-1');
 </script>
-
 <link rel="stylesheet" href="style2.css">
+  <script>
+		window.addEventListener("load", function() {
+			getRows();
+		});
+
+		function getRows() {
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open("get", "Employees.xml", true);
+			xmlhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					showResult(this);
+				}
+			};
+			xmlhttp.send(null);
+		}
+
+		function showResult(xmlhttp) {
+			var xmlDoc = xmlhttp.responseXML.documentElement;
+			removeWhitespace(xmlDoc);
+			var outputResult = document.getElementById("BodyRows");
+			var rowData = xmlDoc.getElementsByTagName("Employee");
+
+			addTableRowsFromXmlDoc(rowData,outputResult);
+		}
+
+		function addTableRowsFromXmlDoc(xmlNodes,tableNode) {
+			var theTable = tableNode.parentNode;
+			var newRow, newCell, i;
+			console.log ("Number of nodes: " + xmlNodes.length);
+			for (i=0; i<xmlNodes.length; i++) {
+				newRow = tableNode.insertRow(i);
+				newRow.className = (i%2) ? "OddRow" : "EvenRow";
+				for (j=0; j<xmlNodes[i].childNodes.length; j++) {
+					newCell = newRow.insertCell(newRow.cells.length);
+					if (xmlNodes[i].childNodes[j].firstChild) {
+						newCell.innerHTML = xmlNodes[i].childNodes[j].firstChild.nodeValue;
+					} else {
+						newCell.innerHTML = "-";
+					}
+					console.log("cell: " + newCell);
+				}
+				}
+				theTable.appendChild(tableNode);
+		}
+
+		function removeWhitespace(xml) {
+			var loopIndex;
+			for (loopIndex = 0; loopIndex < xml.childNodes.length; loopIndex++)
+			{
+				var currentNode = xml.childNodes[loopIndex];
+				if (currentNode.nodeType == 1)
+				{
+					removeWhitespace(currentNode);
+				}
+				if (!(/\S/.test(currentNode.nodeValue)) && (currentNode.nodeType == 3))
+				{
+					xml.removeChild(xml.childNodes[loopIndex--]);
+				}
+			}
+		}
+
+	</script>
+	<style>
+		table {
+		}
+		td {
+			padding: 2px;
+			border: 1px solid #dadada;
+		}
+		.EvenRow {
+			background-color: yellow;
+		}
+
+	</style>
 </head>
 
 <body>
@@ -32,7 +105,9 @@
     <a href="https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps/What_is_JavaScript" target="_blank" title="생활코딩 Link">
       <img src="9.jpg" width="10%"><a>
         <p>JavaScript 는 동적으로 컨텐츠를 바꾸고, 멀티미디어를 다루고, 움직이는 이미지등 웹 페이지를 꾸며주도록 하는 프로그래밍 언어이다. (물론, 전부는 아니지만 몇 줄만의 자바스크립트 코드만으로 꽤나 훌륭한 작품을 만들 수 있다.)</p>
-        <p>
+<table id="MainTable">
+	<tbody id="BodyRows"></tbody>
+</table>
 
 
     </div>
