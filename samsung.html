@@ -15,11 +15,12 @@
         function SetLinkColor(color)
         {
           var i=4;        var t=0;
+          var alreadyclassall = document.querySelectorAll('.already')
           document.querySelector('h1').querySelector('a').style.color=color;
-          while(i<linkcolor.length ||t<alre.length)
+          while(i<document.querySelectorAll('a').length ||t< alreadyclassall.length)
               {
-                document.querySelectorAll('a').style.color=color;
-                document.querySelectorAll('.already')[t].style.color='gray';
+                document.querySelectorAll('a')[i].style.color=color;
+                alreadyclassall[t].style.color='gray';
                 t+=1;  i+=1;
               }
           }
